@@ -8,19 +8,9 @@
 5 6 -> 2 3 '''
 s = int(input('Введите сумму числе: '))
 p = int(input('Введите произведение: '))
-a = 0
-# for x in range(s):
-#     for y in range(s):
-#         if x + y == s and x * y == p:
-#             a += 1
-#             print(x, y)
 
-# или
 for x in range(s):
-    y = s - x
-    if x + y == s and x * y == p:
-        a += 1
-        print(x, y)
-        break
-if a == 0:
-    print('Вы ввели не корректные данные!')
+    for y in range(s):
+        if x + y == s and x * y == p:
+            print(x, y)
+            break
