@@ -15,9 +15,14 @@ while r < a:
      n2 = r
      r = n1 + n2
      count += 1
-if r == a:    
-    print(count)
-else:
-    print(-1)
+# if r == a:    
+#     print(count)
+# else:
+#     print(-1)
+
+if r != a: 
+    count = -1   
+print(count)
+
 
 
