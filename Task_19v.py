@@ -6,7 +6,5 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 k = 3
 print(f'{numbers} k = {k}')
 
-for i in range(k):
-    last_num = numbers.pop()
-    numbers.insert(0, last_num)
+# print(f'{numbers[-k:] + numbers[:-k] = }')
 print(f'{numbers}')
