@@ -17,22 +17,21 @@
 # Напишите программу, которая вычисляет стоимость введенного пользователем слова. Будем считать, что на вход подается только одно слово, которое содержит либо только
 # английские, либо только русские буквы.
 
-list_letters = {1:"AEIOULNSTRАВЕИНОРСТ",
-                2:"DGДКЛМПУ",
-                3:"BCMPБГЁЬЯ",
-                4:"FHVWYЙЫ",
-                5:"KЖЗХЦЧ",
-                8:"JXШЭЮ",
-                10:"QZФЩЪ"}
 
-word = input("Введите слово: ").upper()
-print(word)
-summ = 0
+k = input("Введите слово: ").upper()  # переводим все буквы в верхний регистр
+print(k)
+
+points_en = {1: 'AEIOULNSTR', 2: 'DG', 3: 'BCMP', 4: 'FHVWY', 5: 'K', 8: 'JX', 10: 'QZ'}
+points_ru = {1: 'АВЕИНОРСТ', 2: 'ДКЛМПУ', 3: 'БГЁЬЯ', 4: 'ЙЫ', 5: 'ЖЗХЦЧ', 8: 'ШЭЮ', 10: 'ФЩЪ'}
+word = k
+count = 0
 for i in word:
-    for k, v in list_letters.items():
-        if i in v:
-            summ += k
-# print(f"Стоимость слова: {summ}")
-print(summ)
-
-
+    if i in 'QWERTYUIOPASDFGHJKLZXCVBNM':
+        for j in points_en:
+            if i in points_en[j]:
+                count = count + j
+    else:
+        for j in points_en:
+            if i in points_ru[j]:
+                count = count + j
+print(count)
